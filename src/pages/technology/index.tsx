@@ -1,6 +1,17 @@
 import backGroundTech from "assets/technology/background-technology-tablet.jpg";
+import { useState } from "react";
+import { useDataQuery } from "src/services/fetchApi";
+import { TechButtons } from "./components/TechButtons";
 
 export default function Technology() {
+  const [techSelect, setTechSelect] = useState<number>(0);
+  const { data } = useDataQuery();
+  const technologies = data?.technology;
+
+  const handleButtonClick = (index: number) => {
+    setTechSelect(index);
+  };
+
   return (
     <div>
       <div className="absolute top-0 z-30">
@@ -17,34 +28,41 @@ export default function Technology() {
           <p className="text-white text-xs lg:text-lg">SPACE LAUNCH 101</p>
         </div>
 
-        <div className="flex flex-col items-center text-center gap-10">
-          <div className="flex gap-4">
-            <button className="bg-transparent text-white rounded-full w-12 h-12 border-gray-300 border-[1px] transition duration-300 easy-in-out hover:border-white">
-              1
-            </button>
-            <button>2</button>
-            <button>3</button>
-          </div>
+        {technologies?.map(
+          (tech, techIndex) =>
+            techSelect === techIndex && (
+              <div
+                key={tech.name}
+                className="flex flex-col items-center text-center gap-10"
+              >
+                <TechButtons
+                  technologies={technologies}
+                  handleButtonClick={handleButtonClick}
+                  techSelect={techSelect}
+                />
 
-          <div>
-            <img src="" alt="" />
-          </div>
+                <div>
+                  <img
+                    src={tech.images.portrait}
+                    alt={tech.name}
+                    className="max-w-[365px]"
+                  />
+                </div>
 
-          <div className="flex flex-col gap-2">
-            <span className="text-strongGray text-xl sm:text-2xl lg:text-3xl xl:text-4xl">
-              The terminology
-            </span>
-            <span className="text-white text-2xl sm:text-3xl lg:text-4xl xl:text-5xl">
-              Launch Vehicle
-            </span>
-            <p className="text-lightBlueText text-sm sm:text-base lg:text-lg xl:text-xl">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex autem
-              officia cupiditate vel tempora praesentium et modi labore quaerat
-              ab odio atque sint, iste nam nisi, nobis corporis aspernatur
-              repellendus!
-            </p>
-          </div>
-        </div>
+                <div className="flex flex-col gap-2">
+                  <span className="text-strongGray uppercase text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+                    The terminology...
+                  </span>
+                  <span className="text-white text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
+                    {tech.name}
+                  </span>
+                  <p className="text-lightBlueText text-sm sm:text-base lg:text-lg xl:text-xl">
+                    {tech.description}
+                  </p>
+                </div>
+              </div>
+            )
+        )}
       </div>
     </div>
   );
