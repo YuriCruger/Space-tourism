@@ -38,7 +38,7 @@ export function Crew() {
       <div className="relative z-40 h-screen lg:mx-20 xl:mx-40">
         <div className="fixed w-full pt-28 flex items-center justify-center gap-2 lg:justify-start lg:pt-40">
           <span className="text-gray-500 text-sm lg:text-lg">02</span>
-          <p className="text-white text-xs lg:text-lg">PICK YOUR DESTINATION</p>
+          <p className="text-white text-xs lg:text-lg">MEET YOUR CREW</p>
         </div>
 
         {crews?.map(
