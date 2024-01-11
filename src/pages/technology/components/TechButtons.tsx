@@ -18,7 +18,7 @@ export function TechButtons({
           key={techIndex}
           onClick={() => handleButtonClick(techIndex)}
           className={`bg-transparent text-white rounded-full w-12 h-12 border-gray-500 border-[1px] transition duration-300 easy-in-out hover:border-white ${
-            techSelect === techIndex && "bg-white text-black"
+            techSelect === techIndex && "bg-white text-gray-800"
           }`}
         >
           {techIndex + 1}
