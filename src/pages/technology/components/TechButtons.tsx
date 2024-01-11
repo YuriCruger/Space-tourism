@@ -12,12 +12,12 @@ export function TechButtons({
   techSelect,
 }: ButtonsProps) {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 lg:flex-col">
       {technologies.map((_, techIndex) => (
         <button
           key={techIndex}
           onClick={() => handleButtonClick(techIndex)}
-          className={`bg-transparent rounded-full w-12 h-12 border-gray-500 border-[1px] transition duration-300 easy-in-out hover:border-white ${
+          className={`bg-transparent rounded-full w-12 h-12 border-gray-500 border-[1px] transition duration-300 easy-in-out hover:border-white lg:w-20 lg:h-20 ${
             techSelect === techIndex ? "bg-white text-gray-800" : "text-white"
           }`}
         >
