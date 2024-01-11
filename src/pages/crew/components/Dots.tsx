@@ -8,7 +8,7 @@ interface DotsProps {
 
 export function Dots({ crews, crewSelect, handleDotClick }: DotsProps) {
   return (
-    <div className="flex gap-4 absolute bottom-10 transform translate-x-1/2 right-2/4">
+    <div className="flex gap-4 absolute bottom-10 transform translate-x-1/2 right-2/4 lg:left-0 lg:translate-x-0">
       {crews.map((_, dotIndex: number) => (
         <span
           key={dotIndex}

@@ -28,7 +28,7 @@ export function Home() {
         <img src={backgroundImage} alt="space" className="h-screen w-screen" />
       </div>
 
-      <div className="relative z-40 text-center w-5/6 flex flex-col mx-auto mt-24 lg:flex-row lg:text-start lg:justify-between lg:items-center 2xl:px-36 xl:mt-40">
+      <div className="relative z-40 text-center h-screen w-5/6 flex flex-col items-center justify-center mx-auto lg:flex-row lg:text-start lg:justify-between 2xl:px-36">
         <div className="lg:w-3/6">
           <p className="text-lightBlueText text-sm lg:text-base">
             SO, YOU WANT TO TRAVEL TO

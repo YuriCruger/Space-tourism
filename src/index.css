@@ -19,3 +19,8 @@
   animation: zoomIn;
   animation-duration: 2s;
 }
+
+.animation-crew {
+  animation: fadeInLeft;
+  animation-duration: 1s;
+}

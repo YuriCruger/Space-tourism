@@ -21,7 +21,7 @@ export default function Destination() {
         />
       </div>
 
-      <div className="relative z-40">
+      <div className="relative z-40 h-screen flex flex-col justify-center">
         <div className="flex items-center justify-center gap-2 mb-16 lg:justify-start lg:pl-40">
           <span className="text-gray-500 text-sm lg:text-lg">01</span>
           <p className="text-white text-xs lg:text-lg">PICK YOUR DESTINATION</p>
