@@ -40,7 +40,7 @@ export function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="relative flex items-center justify-between w-screen bg-transparent p-5 h-28 z-50 mb-10 xl:px-20">
+    <header className="fixed flex items-center justify-between w-screen bg-transparent p-5 h-28 z-50 mb-10 lg:px-20 xl:px-40">
       <div>
         <Link to={"/"}>
           <img src={Logo} alt="Logo" className="h-10" />
