@@ -3,12 +3,12 @@ import { useDataQuery } from "../../services/fetchApi";
 import { useState } from "react";
 import { DestinationOption } from "./components/DestinationOption";
 import "animate.css";
+import { IMAGE_DESTINATION_SRC } from "src/constants/SrcImages";
 
 export default function Destination() {
   const [selectedDestination, setSelectedDestination] = useState("Moon");
   const { data } = useDataQuery();
   const destinations = data?.destinations;
-
   const selectDestination = (name: string) => setSelectedDestination(name);
 
   return (
@@ -38,7 +38,11 @@ export default function Destination() {
                   >
                     <div className="lg:w-3/6">
                       <img
-                        src={destination.images.png}
+                        src={
+                          IMAGE_DESTINATION_SRC[
+                            destination.name.toLowerCase() as keyof typeof IMAGE_DESTINATION_SRC
+                          ]
+                        }
                         alt={destination.name}
                         className="w-40 animation mx-auto max-w-[500px] mb-10 lg:w-full"
                       />

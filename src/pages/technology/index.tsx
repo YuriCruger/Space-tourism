@@ -2,6 +2,7 @@ import backGroundTech from "assets/technology/background-technology-tablet.jpg";
 import { useState } from "react";
 import { useDataQuery } from "src/services/fetchApi";
 import { TechButtons } from "./components/TechButtons";
+import { IMAGE_TECHNOLOGY_SRC } from "src/constants/SrcImages";
 
 export default function Technology() {
   const [techSelect, setTechSelect] = useState<number>(0);
@@ -48,7 +49,11 @@ export default function Technology() {
                 <div className="lg:flex lg:flex-row-reverse lg:items-center">
                   <div>
                     <img
-                      src={tech.images.portrait}
+                      src={
+                        IMAGE_TECHNOLOGY_SRC[
+                          tech.id as keyof typeof IMAGE_TECHNOLOGY_SRC
+                        ]
+                      }
                       alt={tech.name}
                       className="max-w-[365px] mx-auto mb-5 md:max-w-[400px] xl:max-w-[450px] 2xl:max-w-[600px]"
                     />

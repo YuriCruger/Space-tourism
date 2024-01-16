@@ -3,6 +3,7 @@ import backGroundCrewDesktop from "assets/crew/background-crew-desktop.jpg";
 import { useEffect, useState } from "react";
 import { useDataQuery } from "src/services/fetchApi";
 import { Dots } from "./components/Dots";
+import { IMAGE_CREW_SRC } from "src/constants/SrcImages";
 
 export function Crew() {
   const [crewSelect, setCrewSelect] = useState<number>(0);
@@ -62,7 +63,7 @@ export function Crew() {
 
                 <div>
                   <img
-                    src={crew.images.png}
+                    src={IMAGE_CREW_SRC[crew.id as keyof typeof IMAGE_CREW_SRC]}
                     alt={crew.name}
                     className="max-w-[250px] mt-5 sm:max-w-[350px] lg:max-w-[500px] animation-crew"
                   />
