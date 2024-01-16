@@ -4,7 +4,7 @@ import { dataType } from "src/types/dataType";
 
 export const fetchData = async () => {
   const response = await axios.get(
-    "https://api.npoint.io/b8288a3e7e9e7cc5aa28"
+    "https://api.npoint.io/9602765981ebb1bfb20a"
   );
   return response.data;
 };

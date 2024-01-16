@@ -12,6 +12,7 @@ export type Destination = {
 };
 
 export type CrewMember = {
+  id: string;
   name: string;
   images: Image;
   role: string;
