@@ -20,6 +20,7 @@ export type CrewMember = {
 };
 
 type Technology = {
+  id: string;
   name: string;
   images: {
     portrait: string;
